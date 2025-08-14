@@ -596,8 +596,13 @@
             </div>
             <div class="form-group">
                 <label for="email">Email</label>
-                <input type="email" id="email" name="email" required>
+                <input type="email" id="email" name="email" required placeholder="sudo.durranii@gmail.com">
                 <div class="form-error" id="email-error">Please enter a valid email</div>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone/WhatsApp</label>
+                <input type="tel" id="phone" name="phone" required placeholder="+923434388099">
+                <div class="form-error" id="phone-error">Please enter your phone number</div>
             </div>
             <div class="form-group">
                 <label for="message">Message</label>
@@ -615,10 +620,10 @@
                 <h3>FlexDrop</h3>
                 <p>Modern web solutions for the digital age</p>
                 <div class="social-links">
-                    <a href="#"><i class="fab fa-facebook"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-linkedin"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/in/khalid-durrani-320879288/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/KhalidDurrani11" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://www.instagram.com/khalid_durrani1/" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://wa.me/923343199005" target="_blank"><i class="fab fa-whatsapp"></i></a>
                 </div>
             </div>
             <div class="footer-section">
@@ -631,7 +636,7 @@
             <div class="footer-section">
                 <h3>Contact Info</h3>
                 <p><i class="fas fa-envelope"></i> sudo.durranii@gmail.com</p>
-                <p><i class="fas fa-phone"></i> +92-334-3199005</p>
+                <p><i class="fas fa-phone"></i> +92343199005</p>
                 <p><i class="fas fa-map-marker-alt"></i> Liaqat Bazar, Quetta</p>
             </div>
         </div>
@@ -685,6 +690,7 @@
             // Get form elements
             const name = document.getElementById('name');
             const email = document.getElementById('email');
+            const phone = document.getElementById('phone');
             const message = document.getElementById('message');
             
             // Validation flags
@@ -705,6 +711,14 @@
                 isValid = false;
             } else {
                 hideError('email-error');
+            }
+            
+            // Validate phone
+            if (phone.value.trim() === '') {
+                showError('phone-error');
+                isValid = false;
+            } else {
+                hideError('phone-error');
             }
             
             // Validate message
@@ -798,3 +812,4 @@
     </script>
 </body>
 </html>
+
